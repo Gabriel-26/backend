@@ -140,8 +140,6 @@ class ResActionLogController extends Controller
             }elseif($userRole == 'resident'){
                 $data = resActionLog::where('user_id', $user['resident_id'])->paginate(5);
                 return response()->json($data);
-            }else{
-                return response()->json('you have no logs');
             }
 
         }

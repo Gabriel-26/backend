@@ -6,8 +6,6 @@ use App\Models\chatGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
-use App\Models\ChatGroupUsers; // Import the ChatGroupUsers model at the beginning of your controller
-
 class ChatGroupController extends Controller
 {
     /**
@@ -83,7 +81,4 @@ class ChatGroupController extends Controller
     {
         //
     }
-
-
-
 }

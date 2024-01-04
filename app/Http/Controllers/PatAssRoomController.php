@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\patAssRoom;
 use App\Models\patient;
+use App\Models\room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;

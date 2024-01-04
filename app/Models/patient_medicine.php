@@ -25,10 +25,10 @@ class patient_medicine extends Model
 
     public function patient(): HasOneOrMany
     {
-        return $this->hasOne(patient_healthRecord::class, 'foreign_key', 'patient_id');
+        return $this->hasOne(patient::class, 'foreign_key', 'patient_id');
     }
 
-    public function medecine(): HasOneOrMany
+    public function medicine(): HasOneOrMany
     {
         return $this->hasOne(medicine::class, 'foreign_key', 'medicine_id');
     }

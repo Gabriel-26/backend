@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use App\Models\user;
 
 class userSeeder extends Seeder
 {
@@ -32,6 +33,6 @@ class userSeeder extends Seeder
             
        ];
 
-       User::insert($User);
+       user::insert($User);
     }
 }

@@ -176,7 +176,7 @@ class ResidentAssignedRoomController extends Controller
         $resident = new residentController;
 
         $residentName = $resident->residentName($resident_id);
-
+ 
 
         return $residentName;
     }
@@ -203,5 +203,67 @@ class ResidentAssignedRoomController extends Controller
         return response()->json($rooms);
     }
 
+    public function getCurrentUserAssignedRooms()
+    {
+        try {
+            $user = Auth::user();
+            
+            if ($user) {
+                $residentId = $user->resident_id;
+    
+                $assignedRooms = resident_assigned_room::where('resident_id', $residentId)->get();
+    
+                // Fetch room names based on room_ids
+                $roomIds = $assignedRooms->pluck('room_id')->toArray();
+                $roomNames = room::whereIn('room_id', $roomIds)->pluck('room_name', 'room_id');
+    
+                // Add room_name to each assigned room
+                $assignedRoomsWithNames = $assignedRooms->map(function ($assignedRoom) use ($roomNames) {
+                    $assignedRoom['room_name'] = $roomNames[$assignedRoom['room_id']] ?? null;
+                    return $assignedRoom;
+                });
+    
+                return response()->json($assignedRoomsWithNames);
+            } else {
+                return response()->json(['error' => 'User not authenticated.']);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'An error occurred.']);
+        }
+    }
+
+
+    public function updateIsFinished(Request $request, $resAssRoom_id)
+    {
+        try {
+            $user = Auth::user();
+            
+            if ($user) {
+                $residentId = $user->resident_id;
+    
+                $assignedRoom = resident_assigned_room::where('resAssRoom_id', $resAssRoom_id)
+                    ->where('resident_id', $residentId)
+                    ->first();
+    
+                if ($assignedRoom) {
+                    $assignedRoom->update(['isFinished' => $request->input('isFinished')]);
+    
+                    $action = 'updated isFinished for Resident Assigned room where id-' . $resAssRoom_id;
+                    $log = new ResActionLogController;
+                    $log->store(Auth::user(), $action);
+    
+                    return response('done');
+                } else {
+                    return response()->json(['error' => 'Assigned room not found.']);
+                }
+            } else {
+                return response()->json(['error' => 'User not authenticated.']);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'An error occurred.']);
+        }
+    }
+    
+    
 
 }

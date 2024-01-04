@@ -202,6 +202,18 @@ class ResidentController extends Controller
 
         return ['lastName' => $lname, 'firstName' => $fname, 'middleName' => $mname];
     }
+
+    public function allRes(){
+        $user = Auth::user();
+        if($user['role'] != 'admin'){
+        $userid = $user->resident_id;
+
+        $residents = resident::where('resident_id','!=', $userid)->get();
+    
+
+        return response()->json($residents);
+        }
+    }
    
 
     public function allRes(){

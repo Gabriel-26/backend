@@ -15,9 +15,4 @@ class chatGroup extends Model
     protected $fillable = [
         'chatGroup_id'
     ];
-
-
-    
 }
-
-

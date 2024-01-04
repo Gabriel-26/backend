@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Medicine;
+use App\Models\medicine;
 
-class MedicineSeeder extends Seeder
+class medicineSeeder extends Seeder
 {
     public function run(): void
     {
@@ -589,7 +589,7 @@ class MedicineSeeder extends Seeder
             ],
         ];
 
-        Medicine::insert($medicines);
+        medicine::insert($medicines);
     }
 }
 
