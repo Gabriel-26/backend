@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\patient;
+use App\Models\Patient;
 use File;
-use App\Models\fileUpload;
+use App\Models\FileUpload;
 use App\Http\Controllers\ResActionLogController;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

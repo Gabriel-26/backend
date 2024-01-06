@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\floor;
+use App\Models\Floor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class FloorController extends Controller

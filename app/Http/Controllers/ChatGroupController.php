@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\chatGroup;
+use App\Models\ChatGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;

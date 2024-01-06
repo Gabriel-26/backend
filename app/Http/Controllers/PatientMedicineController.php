@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\patient_medicine;
+use App\Models\Patient_medicine;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\medicine;
+use App\Models\Medicine;
 class PatientMedicineController extends Controller
 {
     /**

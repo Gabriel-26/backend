@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\patAssRoom;
-use App\Models\patient;
-use App\Models\room;
+use App\Models\PatAssRoom;
+use App\Models\Patient;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
-use App\Models\room;
 
 
 class PatAssRoomController extends Controller

@@ -7,7 +7,6 @@ use App\Models\chatGroupUsers;
 use App\Models\resident;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Resident; // Make sure to import the Resident model at the top of your file
 
 class ChatGroupUsersController extends Controller
 {

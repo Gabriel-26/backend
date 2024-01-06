@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\resident;
+use App\Models\Resident;
 
 
 use Dotenv\Exception\ValidationException;

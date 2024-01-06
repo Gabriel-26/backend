@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\department;
-use App\Models\resident;
+use App\Models\Department;
+use App\Models\Resident;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -216,16 +216,5 @@ class ResidentController extends Controller
     }
    
 
-    public function allRes(){
-        $user = Auth::user();
-        if($user['role'] != 'admin'){
-        $userid = $user->resident_id;
-
-        $residents = resident::where('resident_id','!=', $userid)->get();
-    
-
-        return response()->json($residents);
-        }
-    }
-    
+   
 }
