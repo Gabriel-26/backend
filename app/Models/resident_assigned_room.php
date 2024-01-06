@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\room;
 use App\Models\resident;
 use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
-class resident_assigned_room extends Model
+class Resident_assigned_room extends Model
 {
     use HasFactory;
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 
-class physicalExam_values extends Model
+class PhysicalExam_values extends Model
 {
     use HasFactory;
 

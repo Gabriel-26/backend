@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens; 
 
-class resident extends Model implements Authenticatable
+class Resident extends Model implements Authenticatable
 {   use HasApiTokens, HasFactory, Notifiable;
 
     protected $primaryKey = 'resident_id';

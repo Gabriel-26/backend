@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 
-class phr_categoryAttributes extends Model
+class Phr_categoryAttributes extends Model
 { 
 
     use HasFactory;

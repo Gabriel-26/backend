@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 
-class lab_results extends Model
+class Lab_results extends Model
 {
     use HasFactory;
     protected $primaryKey = 'labResult_id';
